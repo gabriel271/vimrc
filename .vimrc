@@ -8,8 +8,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gabriel271/vim-monokai'
+Plug 'mattn/emmet-vim'
+Plug 'jwalton512/vim-blade'
 
 call plug#end()
+
+
+""""""""""""""""""""""
+"""""""emmet-vim""""""
+""""""""""""""""""""""
+
+let g:user_emmet_leader_key=','
 
 """"""""""""""""""""""
 """""""Nerd-TREE""""""
@@ -56,6 +65,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 """""""""""""""""""""""""""""""""
 """"""""Processos escondidos"""""
 """""""""""""""""""""""""""""""""
@@ -97,4 +108,4 @@ imap <C-S> <ESC>:w<CR>
 map q <ESC>:q<CR>
 map <C-i> :q!<ESC>
 map <C-c> "+y
-imap <C-v> <esc>"+p<cr>
+imap <C-v> <esc>"+p
