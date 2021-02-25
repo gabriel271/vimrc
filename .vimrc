@@ -97,5 +97,4 @@ imap <C-S> <ESC>:w<CR>
 map q <ESC>:q<CR>
 map <C-i> :q!<ESC>
 map <C-c> "+y
-map <C-v> "+p
 imap <C-v> <esc>"+p<cr>
