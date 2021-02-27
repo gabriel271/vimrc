@@ -1,0 +1,20 @@
+{
+    "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+    "explorer.icon.enableNerdfont": true,
+    "explorer.width": 30,
+    "explorer.keyMappings.global": {
+        "<cr>": [
+            "expandable?",
+            ["expanded?", "collapse", "expand"],
+            "open"
+        ],
+        "x": ["wait", "collapse:recursive"],
+        "r": "rename",
+        "c": "copyFile",
+        "d": "delete",
+        "af": "addFile",
+        "mf": "moveFile",
+        "ad": "addDirectory",
+        "md": "moveDirectory"
+    }
+}

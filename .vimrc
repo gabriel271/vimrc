@@ -5,14 +5,10 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'gabriel271/vim-monokai'
 Plug 'mattn/emmet-vim'
 Plug 'jwalton512/vim-blade'
-
 call plug#end()
-
 
 """"""""""""""""""""""
 """""""emmet-vim""""""
@@ -21,31 +17,37 @@ call plug#end()
 let g:user_emmet_leader_key=','
 
 """"""""""""""""""""""
-"""""""Nerd-TREE""""""
-""""""""""""""""""""""
-
-autocmd VimEnter * NERDTree
-
-map <C-b> :NERDTreeToggle <cr>
-
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
-
-""""""""""""""""""""""
 """""""vim-devicons"""
 """"""""""""""""""""""
 
-"NONE
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+au VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+au VimEnter * call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+au VimEnter * call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+au VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+au VimEnter * call NERDTreeHighlightFile('rb', 'Red', 'none', '#ffa500', '#151515')
+au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 """"""""""""""""""""""
 """"""""Coc-nvim""""""
 """"""""""""""""""""""
 
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-space> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -56,16 +58,19 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-	execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-	call CocActionAsync('doHover')
-  else
-	execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
 endfunction
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+map <C-b> :CocCommand explorer<CR>
+autocmd VimEnter * execute "normal \<C-b>" 
 
 """""""""""""""""""""""""""""""""
 """"""""Processos escondidos"""""
@@ -93,7 +98,7 @@ color monokai
 """""""Usabilidade"""""
 """""""""""""""""""""""
 
-"set mouse=a
+set mouse=a
 set confirm
 set wildmenu
 
@@ -106,6 +111,7 @@ map <C-UP> ddkP
 map <C-S> <ESC>:w<CR>
 imap <C-S> <ESC>:w<CR>
 map q <ESC>:q<CR>
-map <C-i> :q!<ESC>
 map <C-c> "+y
 imap <C-v> <esc>"+p
+autocmd VimEnter * source ~/.vimrc
+
