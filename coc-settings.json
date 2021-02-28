@@ -1,18 +1,23 @@
 {
+    "diagnostic.checkCurrentLine": true,
     "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
     "explorer.icon.enableNerdfont": true,
     "explorer.width": 30,
+    "explorer.file.showHiddenFiles": true,
     "explorer.keyMappings.global": {
         "<cr>": [
             "expandable?",
             ["expanded?", "collapse", "expand"],
             "open"
         ],
+        "h": "",
+        "l": "",
         "x": ["wait", "collapse:recursive"],
-        "r": "rename",
-        "c": "copyFile",
-        "d": "delete",
+        "rr": "rename",
+        "dd": "delete",
+        "vv": "pasteFile",
         "af": "addFile",
+        "cc": "copyFile",
         "mf": "moveFile",
         "ad": "addDirectory",
         "md": "moveDirectory"

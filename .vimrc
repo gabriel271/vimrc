@@ -17,30 +17,6 @@ call plug#end()
 let g:user_emmet_leader_key=','
 
 """"""""""""""""""""""
-"""""""vim-devicons"""
-""""""""""""""""""""""
-
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-au VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-au VimEnter * call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-au VimEnter * call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-au VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-au VimEnter * call NERDTreeHighlightFile('rb', 'Red', 'none', '#ffa500', '#151515')
-au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
-""""""""""""""""""""""
 """"""""Coc-nvim""""""
 """"""""""""""""""""""
 
@@ -92,6 +68,7 @@ set ignorecase
 set nowrap
 set title
 set termguicolors
+set splitright
 color monokai
 
 """""""""""""""""""""""
@@ -113,5 +90,3 @@ imap <C-S> <ESC>:w<CR>
 map q <ESC>:q<CR>
 map <C-c> "+y
 imap <C-v> <esc>"+p
-autocmd VimEnter * source ~/.vimrc
-
