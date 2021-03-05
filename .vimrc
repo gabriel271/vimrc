@@ -78,6 +78,7 @@ set termguicolors
 set splitright
 color monokai
 set hidden
+set cursorline
 
 """""""""""""""""""""""
 """""""Usabilidade"""""
