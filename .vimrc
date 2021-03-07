@@ -12,6 +12,12 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
 
 """"""""""""""""""""""
+""""""Dracula"""""""""
+""""""""""""""""""""""
+
+let g:dracula_italic = 0
+
+""""""""""""""""""""""
 """""""emmet-vim""""""
 """"""""""""""""""""""
 
@@ -74,11 +80,11 @@ set expandtab
 set ignorecase
 set nowrap
 set title
-set termguicolors
 set splitright
 color monokai
 set hidden
 set cursorline
+set termguicolors
 
 """""""""""""""""""""""
 """""""Usabilidade"""""
@@ -95,7 +101,8 @@ set wildmenu
 map <C-DOWN> ddp
 map <C-UP> ddkP
 map <C-S> <ESC>:w<CR>
-imap <C-S> <ESC>:w<CR>
 map q <ESC>:q<CR>
 map <C-c> "+y
+imap <C-S> <ESC>:w<CR>
 imap <C-v> <esc>"+pi
+tmap <C-V> <C-w>N<ESC>:vert term<CR>
