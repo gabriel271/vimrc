@@ -14,6 +14,13 @@ Plug 'crusoexia/vim-monokai'
 call plug#end()
 
 """"""""""""""""""""""
+""""""Monokai"""""""""
+""""""""""""""""""""""
+
+"let g:monokai_term_italic = 1
+"let g:monokai_gui_italic = 1
+
+""""""""""""""""""""""
 """""Airline""""""""""
 """"""""""""""""""""""
 
@@ -120,3 +127,4 @@ map <C-c> "+y
 imap <C-S> <ESC>:w<CR>
 imap <C-v> <esc>"+pi
 tmap <C-V> <C-w>N<ESC>:vert term<CR>
+map <C-a> :term<CR><C-W><S-R><C-W><S-N>:resize 10<CR>i
