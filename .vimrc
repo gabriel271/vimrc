@@ -4,12 +4,26 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'gabriel271/vim-monokai'
 Plug 'mattn/emmet-vim'
 Plug 'jwalton512/vim-blade'
 Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'crusoexia/vim-monokai'
+
 call plug#end()
+
+""""""""""""""""""""""
+"""""Airline""""""""""
+""""""""""""""""""""""
+
+let g:airline#extensions#ycm#error_symbol = 'E:'
+let g:airline#extensions#ycm#warning_symbol = 'W:'
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 """"""""""""""""""""""
 """"""Dracula"""""""""
