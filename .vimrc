@@ -20,17 +20,20 @@ call plug#end()
 "let g:monokai_term_italic = 1
 "let g:monokai_gui_italic = 1
 
+
 """"""""""""""""""""""
 """""Airline""""""""""
 """"""""""""""""""""""
 
-let g:airline#extensions#ycm#error_symbol = 'E:'
-let g:airline#extensions#ycm#warning_symbol = 'W:'
+"let g:airline_extensions = []
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+"let g:airline#extensions#ycm#error_symbol = 'E:'
+"let g:airline#extensions#ycm#warning_symbol = 'W:'
+
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
 
 """"""""""""""""""""""
 """"""Dracula"""""""""
@@ -94,6 +97,7 @@ set nowritebackup
 """"""""Interface"""""
 """"""""""""""""""""""
 
+set encoding=utf-8
 set number
 set shiftwidth=4
 set softtabstop=4
@@ -103,9 +107,15 @@ set nowrap
 set title
 set splitright
 color monokai
+" Monokai
+hi CocWarningSign guibg=#2D2E27
+hi CocHintSign guibg=#2D2E27
+hi CocInfoSign guibg=#2D2E27
+hi Error guibg=#2D2E27
 set hidden
 set cursorline
 set termguicolors
+set synmaxcol=400
 
 """""""""""""""""""""""
 """""""Usabilidade"""""
