@@ -97,6 +97,7 @@ set nowritebackup
 """"""""Interface"""""
 """"""""""""""""""""""
 
+set guicursor=
 set encoding=utf-8
 set number
 set shiftwidth=4
@@ -107,15 +108,18 @@ set nowrap
 set title
 set splitright
 color monokai
+
 " Monokai
 hi CocWarningSign guibg=#2D2E27
 hi CocHintSign guibg=#2D2E27
 hi CocInfoSign guibg=#2D2E27
 hi Error guibg=#2D2E27
+
 set hidden
 set cursorline
 set termguicolors
 set synmaxcol=400
+set splitbelow
 
 """""""""""""""""""""""
 """""""Usabilidade"""""
@@ -124,6 +128,8 @@ set synmaxcol=400
 set mouse=a
 set confirm
 set wildmenu
+set incsearch
+set hlsearch
 
 """""""""""""""""""
 """""Key bind""""""
@@ -132,9 +138,8 @@ set wildmenu
 map <C-DOWN> ddp
 map <C-UP> ddkP
 map <C-S> <ESC>:w<CR>
-map q <ESC>:q<CR>
 map <C-c> "+y
 imap <C-S> <ESC>:w<CR>
 imap <C-v> <esc>"+pi
-tmap <C-V> <C-w>N<ESC>:vert term<CR>
-map <C-a> :term<CR><C-W><S-R><C-W><S-N>:resize 10<CR>i
+map <C-a> :term<CR>
+tmap <C-a> <C-w>:vert term<CR>
